@@ -1,6 +1,6 @@
 import { PARTNERS } from "../../app/shared/PARTNERS";
 
-export const selectAllPartners = (id) => {
+export const selectAllPartners = () => {
   return PARTNERS;
 };
 
