@@ -1,10 +1,11 @@
+import { useSelector } from "react-redux";
 import { Col } from "reactstrap";
 import Comment from "./Comments";
 import { selectCommentsByCampsiteId } from "./commentsSlice";
 import CommentForm from "./CommentForm";
 
 const CommentsList = ({ campsiteId }) => {
-  const comments = selectCommentsByCampsiteId(campsiteId);
+  const comments = useSelector(selectCommentsByCampsiteId(campsiteId));
   if (comments && comments.length > 0) {
     return (
       <Col md="5" className="m-1">
@@ -18,7 +19,7 @@ const CommentsList = ({ campsiteId }) => {
   }
   return (
     <Col md="5" className="m-1">
-      There are no Comments for this campesite yet.
+      There are no Comments for this campsite yet.
     </Col>
   );
 };
